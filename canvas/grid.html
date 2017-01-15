@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Canvas</title>
+  <meta name="description" content="The HTML5 Canvas Exercise">
+  <meta name="author" content="Jacob Nelson">
+  <script>
+  function draw(){
+    var surface = document.getElementById('surface');
+    if (surface.getContext){
+      var ctx = surface.getContext('2d');
+      var width = surface.width;
+      var height = surface.height;
+
+      var gridWidth = 10;
+
+      for(i = gridWidth;i < width;i = i+gridWidth){
+        ctx.beginPath();
+        ctx.strokeStyle = '#CCC';
+        ctx.moveTo(0,i);
+        ctx.lineTo(width,i);
+        ctx.stroke();
+      }
+
+      for(i = gridWidth;i < width;i = i+gridWidth){
+        ctx.beginPath();
+        ctx.strokeStyle = '#CCC';
+        ctx.moveTo(i,0);
+        ctx.lineTo(i,height);
+        ctx.stroke();
+      }
+
+    }
+  }
+  </script>
+  <style type="text/css">
+    canvas { border: 1px solid black; }
+  </style>
+</head>
+
+<body onload="draw();">
+<canvas id="surface" width="150" height="150"></canvas>
+</body>
+</html>
