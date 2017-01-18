@@ -1,0 +1,45 @@
+.column{
+  width: 20%;
+  padding: 0 20px;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.product{
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 5px 1px #ccc;
+}
+
+.product img{
+  width: 100%;
+}
+
+.desc{
+  padding: 15px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.product footer{
+  padding: 5px 0;
+}
+
+.product footer div{
+  width: 49%;
+  display: inline-block;
+}
+
+@media
+ (min-device-width: 320px)
+and (max-device-width: 570px){
+  .column{
+    width: 90%;
+  }
+}
+
+@media
+  (min-device-width: 320px) and (max-device-width: 380px)  {
+    .column{
+      width: 90%;
+    }
+}
