@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+-->
+  <title>A Simple HTML5 Template</title>
+  <meta name="description" content="A Simple HTML5 Video Feature Demo">
+  <meta name="author" content="Jacob Nelson">
+  <script>
+  function saveSessionStorage(){
+    var val = document.querySelector("#username").value;
+    console.log("value => "+val);
+    sessionStorage.setItem("username", val);
+  }
+
+  function getSessionStorage(){
+    var val = sessionStorage.getItem("username");
+    alert("sessionStorage value => "+val);
+  }
+
+  function saveLocalStorage(){
+    var val = document.querySelector("#username").value;
+    console.log("value => "+val);
+    localStorage.setItem("username", val);
+  }
+
+  function getLocalStorage(){
+    var val = localStorage.getItem("username");
+    alert("localStorage value => "+val);
+  }
+
+  </script>
+</head>
+
+<body>
+<input type="text" id="username" placeholder="please enter username" />
+
+<input type="button" value="save session storage" onclick="saveSessionStorage()">
+<input type="button" value="save local storage" onclick="saveLocalStorage()">
+<input type="button" value="read session storage" onclick="getSessionStorage()">
+<input type="button" value="read local storage" onclick="getLocalStorage()">
+</body>
+</html>
