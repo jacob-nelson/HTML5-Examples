@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+-->
+  <title>A Simple HTML5 Template</title>
+  <meta name="description" content="A Simple HTML5 Template">
+  <meta name="author" content="Jacob Nelson">
+
+  <script>
+  function canvasOperations(){
+    var surface = document.querySelector("#surface");
+    var context = surface.getContext('2d');
+
+    context.font = "bold 40pt Calibri";
+    context.fillStyle = 'blue';
+    var text = "HTML5 Training";
+    context.fillText(text, 100, 50);
+
+    var metrics = context.measureText(text);
+    var width = metrics.width;
+    context.font = "10pt Calibri";
+    context.fillStyle = '#555';
+    context.fillText('( '+width+' pixels wide)', 100, 80);
+    console.log("text width "+width)
+
+    context.font = "40pt Calibri";
+    context.lineWidth = 3;
+    context.strokeStyle = 'blue';
+    var x = 100 + width + 10;
+    context.strokeText("Session", x, 50);
+
+    /* Code for drawing lines */
+
+    context.beginPath();
+    context.moveTo(25, 450);
+    context.lineTo(50, 75);
+    context.lineWidth = 10;
+    context.strokeStyle = '#F00';
+    context.stroke();
+
+    /* Code for drawing clockwise semi circle */
+
+    var radius = 80;
+    var startAngle = 1.1 * Math.PI;
+    var endAngle = 1.8 * Math.PI;
+    var counterClockWise = false;
+
+    context.beginPath();
+    context.arc(150, 150, radius, startAngle, endAngle, counterClockWise);
+    context.lineWidth = 5;
+    context.strokeStyle = 'black';
+    context.stroke();
+
+    /* Code for drawing anti clockwise semi circle */
+
+    var radius = 80;
+    var startAngle = 1.1 * Math.PI;
+    var endAngle = 1.8 * Math.PI;
+    var counterClockWise = true;
+
+    context.beginPath();
+    context.arc(150, 190, radius, startAngle, endAngle, counterClockWise);
+    context.lineWidth = 5;
+    context.strokeStyle = 'brown';
+    context.stroke();
+
+    /* Code for drawing circle */
+
+    var radius = 80;
+    var startAngle = 0;
+    var endAngle = 2 * Math.PI;
+    var counterClockWise = false;
+
+    context.beginPath();
+    context.arc(250, 350, radius, startAngle, endAngle, counterClockWise);
+    context.lineWidth = 5;
+    context.strokeStyle = 'brown';
+    context.stroke();
+
+  }
+
+  function clearCanvas(){
+    var surface = document.querySelector("#surface");
+    var context = surface.getContext('2d');
+    context.clearRect(0, 0, surface.width, surface.height);
+  }
+
+  </script>
+
+</head>
+<body onload="canvasOperations()">
+<canvas height="500" width="800" id="surface" style="border:1px solid #ccc"></canvas>
+<input  type="button" value="clear" onclick="clearCanvas()" />
+</body>
+</html>
