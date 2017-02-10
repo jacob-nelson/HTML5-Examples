@@ -7,11 +7,33 @@
   <title>HTML5 Web 2.0 Forms</title>
   <meta name="description" content="HTML5 Web 2.0 Forms">
   <meta name="author" content="Jacob Nelson">
+  <script>
+  //alert("hi outside")
+  function setRangeValue(val){
+    //alert("hi inside")
+    console.error("Selected Value => "+val)
+    document.getElementById('rangeValue').innerHTML = val;
+  }
+  </script>
   <style>
+  input[type="search"] {
+    padding: 1px 0;
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      box-sizing: content-box;
+  }
+
   progress {
   background-color: #f3f3f3;
   height: 28px;
   width: 250px;
+}
+
+input{
+  width: 150px;
+  height: 30px;
+  border: 1px solid brown;
+  border-radius: 5px;
 }
 
 input:required {
@@ -44,6 +66,52 @@ input:out-of-range {
 <input autocomplete="on" id="name" name="name" value="" aria-describedby="name-format" required aria-required=”true” pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+"  title="firstname lastname">
 <input type="number" min="1" max="4" id="numTickets" name="numTickets">
 <input type="submit">
+
+<form>
+  <input type="text" name="languages" list="languages" />
+  <datalist id="languages">
+    <option value="English"></option>
+    <option value="Hindi"></option>
+    <option value="Malayalam"></option>
+    <option value="Gujarati"></option>
+    <option value="Tamil"></option>
+  </datalist>
+  <div style="border: 1px solid #ccc;">
+    <input type="text" placeholder="username" required pattern="^[A-Z0-9]*">
+  </div>
+  <div>
+    <input type="url" placeholder="please enter url" >
+  </div>
+  <div>
+    <input type="tel" placeholder="please enter phone number" >
+  </div>
+  <div>
+    <input type="email" placeholder="please enter email" >
+  </div>
+  <div>
+    <input type="search" placeholder="What are you looking for?" autofocus>
+  </div>
+  <div>
+    <input type="number" placeholder="please enter number" min="5" max="10" step="2">
+  </div>
+  <div>
+    <input type="range" min="2" max="20" step=3 value=5 oninput="setRangeValue(this.value)">&nbsp;
+    <span id="rangeValue"></span>
+  </div>
+  <div>
+    <progress value="10" max="100"></progress>
+  </div>
+
+  <div>
+    <input type="date">
+  </div>
+  <div>
+    <input type="color">
+  </div>
+  <div>
+    <input type="submit" value="Submit Form" />
+  </div>
+</form>
 </form>
 </body>
 </html>
